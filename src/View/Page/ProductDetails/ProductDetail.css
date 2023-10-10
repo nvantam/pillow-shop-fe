@@ -1,0 +1,16 @@
+.deltail{
+    text-decoration: none;
+    color:  #4B3049;
+    font-size: 20px;
+    /* display: flex;
+    
+    justify-content: center; */
+}
+.productdetail:hover{
+    color:#B08EAD;
+}
+.descrip{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 700px; 
+}
