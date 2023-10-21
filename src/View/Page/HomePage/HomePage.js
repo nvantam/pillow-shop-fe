@@ -1,41 +1,24 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../../components/header/Header'
 import Footer from '../../../components/footer/Footer'
+import Product from '../ProductPage/Product'
 import './HomePage.css'
 import Lib from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 function HomePage() {
-    const listProducts = [
-        {
-            id: 1, img: "https://preview.colorlib.com/theme/pillowmart/img/tranding_item/tranding_item_1.png.webp", name: "Cervical pillow for airplane car office nap pillow", price: 5
-        },
-        {
-            id: 2, img: "https://preview.colorlib.com/theme/pillowmart/img/tranding_item/tranding_item_2.png.webp",  name: "Foam filling cotton slow rebound pillows", price: 5
-        },
-        {
-            id: 3, img: "https://preview.colorlib.com/theme/pillowmart/img/tranding_item/tranding_item_3.png.webp", name: "Memory foam filling cotton Slow rebound pillows", price: 5
-        },
-        {
-            id: 4, img: "https://preview.colorlib.com/theme/pillowmart/img/tranding_item/tranding_item_4.png.webp", name: "Cervical pillow for airplane car office nap pillow", price: 5
-        },
-        {
-            id: 5, img: "https://preview.colorlib.com/theme/pillowmart/img/tranding_item/tranding_item_5.png.webp", name: "Foam filling cotton slow rebound pillows", price: 5
-        },
-        {
-            id: 6, img: "https://preview.colorlib.com/theme/pillowmart/img/tranding_item/tranding_item_6.png.webp", name: "Memory foam filling cotton Slow rebound pillows", price: 5
-        },
-    ]
 
-    // useEffect(() => {
-    //     fetch('http://localhost:4000/')
-    //     .then(data => {
-    //         return data.json()
-    //     })
-    //     .then(
-    //         data => console.log({data})
-    //     )
-    // },[])
+    const [apis, setApis] = useState([])
+    const URL = process.env.REACT_APP_URL;
 
+    useEffect(() => {
+        fetch(`${URL}/getproducts`)
+            .then(data => {
+                return data.json()
+            })
+            .then(
+                data => setApis(data.slice(0, 6))
+            )
+    }, [])
     return (
         <div>
             <Header />
@@ -45,7 +28,7 @@ function HomePage() {
                     display: 'flex',
                     justifyContent: 'space-around',
                     marginTop: '-23px',
-                    marginLeft:'15px',
+                    marginLeft: '15px',
                 }}>
                     <div style={{
 
@@ -57,28 +40,32 @@ function HomePage() {
                             color: '#4B3049',
 
                         }}>
-                            <h1>Best quality pillow</h1>
+                            <h1>Gối chất lượng tốt nhất</h1>
 
                         </div>
                         <div style={{
-                            fontSize: '20px',
+                            fontSize: '18px',
                             marginLeft: '110px',
+                            width:'650px',
                             textAlign: 'left',
                             color: '#795376',
                         }}>
-                            Seamlessly empower fully researched growth strategies and interoperable internal
+                            Nơi bạn có thể khám phá và mua sắm những sản phẩm gối chất lượng, tạo sự thoải mái tối đa cho giấc ngủ của bạn
                         </div>
-                        <div className='shop_now' style={{
-                            marginTop: '30px',
-                            height: '40px',
-                            width: '110px',
-                            fontSize: '19px',
-                            marginLeft: '110px',
-                            textAlign: 'center',
-                            padding: '15px 10px 5px 15px',
-                        }} >
-                            shop now
-                        </div>
+                        <Link className='item' to="/Product" >
+
+                            <div className='shop_now' style={{
+                                marginTop: '30px',
+                                height: '40px',
+                                width: '110px',
+                                fontSize: '19px',
+                                marginLeft: '110px',
+                                textAlign: 'center',
+                                padding: '15px 10px 5px 15px',
+                            }} >
+                                Shop now
+                            </div>
+                        </Link>
 
                     </div>
                     <div>
@@ -98,7 +85,7 @@ function HomePage() {
                     justifyContent: 'space-around',
                     marginTop: '200px',
                     marginBottom: '120px',
-                    marginLeft:'15px',
+                    marginLeft: '15px',
                 }}>
                     <div style={{
                         display: 'flex',
@@ -133,7 +120,7 @@ function HomePage() {
                             color: '#B08EAD',
 
                         }}>
-                            <h5>Started from $10</h5>
+                            <h5>Bắt đầu từ 5000đ</h5>
                         </div>
                         <div style={{
                             fontSize: '20px',
@@ -142,18 +129,20 @@ function HomePage() {
                             color: '#4B3049',
 
                         }}>
-                            <h2> Printed memory foam brief modern throw pillow case</h2>
+                            <h2>Vỏ gối với họa tiết hiện đại và thiết kế ngắn gọn</h2>
                         </div>
-                        <div className='explore_now' style={{
-                            marginTop: '30px',
-                            height: '40px',
-                            width: '120px',
-                            fontSize: '14px',
-                            textAlign: 'center',
-                            padding: '15px 10px 0px 15px',
-                        }}>
-                            EXPLORE NOW
-                        </div>
+                        <Link className='item' to="/Product">
+                            <div className='explore_now' style={{
+                                marginTop: '30px',
+                                height: '40px',
+                                width: '120px',
+                                fontSize: '14px',
+                                textAlign: 'center',
+                                padding: '15px 10px 0px 15px',
+                            }}>
+                                EXPLORE NOW
+                            </div>
+                        </Link>
                     </div>
 
                 </div>
@@ -161,11 +150,15 @@ function HomePage() {
                 <div style={{
                     backgroundColor: '#F4EDF2',
                     paddingTop: '70px',
+
                 }}>
                     <div style={{
                         textAlign: 'center',
+                        marginBottom: '100px',
                     }}>
-                        <h1>Trending Items</h1>
+                        <h1>
+                            Mặt Hàng Thịnh Hành
+                        </h1>
                     </div>
                     {/* dòng 1 */}
                     <div style={{
@@ -184,10 +177,11 @@ function HomePage() {
 
                         }} >
                             {/* vòng lặp */}
-                            {listProducts.map(listProduct => (
-                                <Link className='item'  to={`/ProductDetails/` + listProduct.id}>
+                            {apis.map(listProduct => (
+                                <Link className='item' to={`/ProductDetails/` + listProduct._id}>
                                     <div style={{
-                                        marginTop: '50px'
+                                        //marginTop: '50px',
+                                        marginBottom: '100px',
                                     }}>
                                         <img src={listProduct.img} alt="" style={{
                                             width: '370px'
@@ -198,14 +192,14 @@ function HomePage() {
                                             </h3>
                                         </div>
                                         <div className='name_product'>
-                                            From {listProduct.price}$
+                                            Giá {listProduct.price}đ
                                         </div>
                                     </div>
                                 </Link>
                             ))}
-                            
-                           
-                        </div>         
+
+
+                        </div>
                     </div>
                 </div>
             </div>

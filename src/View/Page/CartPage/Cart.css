@@ -1,0 +1,6 @@
+.dialog{
+    visibility: hidden;
+}
+.dialog:target{
+    visibility: visible;
+}

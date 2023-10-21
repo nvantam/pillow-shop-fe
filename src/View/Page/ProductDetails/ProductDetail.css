@@ -1,13 +1,14 @@
 .deltail{
     text-decoration: none;
     color:  #4B3049;
-    font-size: 20px;
+    /* font-size: 20px; */
     /* display: flex;
     
     justify-content: center; */
 }
 .productdetail:hover{
     color:#B08EAD;
+    cursor: pointer;
 }
 .descrip{
     margin-top: 50px;

@@ -1,46 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../../components/header/Header'
 import Footer from '../../../components/footer/Footer'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BASE_API_URL } from '../../../config'
 import './Product.css'
 function Product() {
+  const URL = process.env.REACT_APP_URL;
 
-  const listProducts = [
-    {
-      //lấy api
-      id: 7, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_1.png.webp", name: "Cervical pillow for airplane car office nap pillow", price: 5
-    },
-    {
-      id: 8, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_2.png.webp", name: "Geometric striped flower home classy decor", price: 5
-    },
-    {
-      id: 9, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_3.png.webp", name: "Foam filling cotton slow rebound pillows", price: 5
-    },
-    {
-      id: 10, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_4.png.webp", name: "Memory foam filling cotton Slow rebound pillows", price: 5
-    },
-    {
-      id: 11, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_5.png.webp", name: "Memory foam filling cotton rebound pillows", price: 5
-    },
-    {
-      id: 12, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_6.png.webp", name: "Sleeping orthopedic sciatica Back Hip Joint Pain relief", price: 5
-    },
-    {
-      id: 13, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_7.png.webp", name: "Memory foam filling cotton Slow rebound pillows", price: 5
-    },
-    {
-      id: 14, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_8.png.webp", name: "Sleeping orthopedic sciatica Back Hip Joint Pain reliefr", price: 5
-    },
-    {
-      id: 15, img: "https://preview.colorlib.com/theme/pillowmart/img/product/product_list_9.png.webp", name: "Geometric striped flower home classy decor", price: 5
-    },
-  ]
+  const [apis, setApis] = useState([])
+  useEffect(() => {
+    fetch(`${URL}/getproducts`)
+      .then(data => {
+        return data.json()
+      }).then(
+        data => setApis(data)
+      )
+  },[])
 
   return (
     <div >
       <Header />
       <div style={{
-        marginTop: '90px',
+        marginTop: '70px',
         backgroundColor: '#B08EAD',
         height: '350px',
         display: 'flex',
@@ -51,7 +33,7 @@ function Product() {
           fontSize: '40px',
           color: 'white',
         }}>
-          <h3>Product List</h3>
+          <h3>Sản Phẩm</h3>
         </div>
       </div>
       <div style={{
@@ -61,7 +43,7 @@ function Product() {
         marginLeft: 0,
       }}>
         <div style={{
-          width: '87%',
+          width: '80%',
           display: 'flex',
           flexWrap: 'wrap',
 
@@ -69,8 +51,8 @@ function Product() {
 
         }}>
           {/* vòng lặp */}
-          {listProducts.map(listProduct => (
-            <Link className='linkproduct' to={`/ProductDetails/` + listProduct.id}>
+          {apis.map(listProduct => (
+            <Link className='linkproduct' to={`/ProductDetails/` + listProduct._id}>
               <div style={{
                 marginTop: '50px',
               }} >
@@ -83,7 +65,7 @@ function Product() {
                   </h3>
                 </div>
                 <div className='products'>
-                  From {listProduct.price}$
+                  Giá {listProduct.price}đ
                 </div>
               </div>
             </Link>

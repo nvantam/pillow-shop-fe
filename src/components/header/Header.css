@@ -17,9 +17,7 @@
     color: black;
 }
 
-.menu_header ::before {
-   
-}
+
 
 .product {
     display: none;
@@ -38,15 +36,56 @@
     top: -20px;
     left: 0;
 }
-
-.product li {
+.explore_now {
+    cursor: pointer;
+}
+.logout {
     margin-left: -40px;
     display: flex;
     justify-content: flex-start;   
     width: 120px;
     line-height: 1px;
     margin-top: 30px;
-    color: white; 
-    font-weight: 500;
-    
+    color: red; 
+    font-weight: 550;
+    display: none;
+    z-index: 999;
+
 }
+
+.user:hover .logout{
+    display: block;
+}
+.logout:hover{
+    cursor: pointer;
+}
+.logout::before{
+    content: "";
+    background-color: #fff;
+    position:absolute ;
+    width: 100%;
+    height: 40px; 
+    top: 20px;
+    left: 0; 
+    text-align: right;
+    opacity: 0.02;
+}
+ .user:hover{
+    cursor: pointer;
+ }
+ .user:hover{
+    color: #B08EAD;
+
+ }
+ /* .container {
+    max-width: 150px; /* Điều chỉnh giá trị tùy theo nhu cầu của bạn */
+    /* overflow: hidden;
+    white-space: nowrap;
+  } */
+  
+  /* Khi nội dung vượt quá chiều rộng của .container, hiển thị ... ở cuối */
+  /* .container .text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  } */
