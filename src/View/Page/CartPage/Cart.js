@@ -19,26 +19,41 @@ function Cart() {
 
     // const { userCartId } = useParams()
     useEffect(() => {
-        const getdata = async () => {
-         await axios.get(`${URL}/getlisttocart/${userId}`)
-            .then(data => {
+        // Define an async function to get data for the main list
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${URL}/getlisttocart/${userId}`);
+                setInitialValues(response.data);
+            } catch (error) {
+                // Handle any errors, e.g., set an error state.
+                console.error("Error fetching main list data:", error);
+            }
+        };
+    
+        // Define another async function to get data for the secondary list
+        const fetchDataByTT = async () => {
+            try {
+                const response = await axios.get(`${URL}/getlisttocartbytt/${userId}`);
+                setInitialValuebytt(response.data);
+            } catch (error) {
+                // Handle any errors, e.g., set an error state.
+                console.error("Error fetching secondary list data:", error);
+            }
+        };
+    
+        // Call the data-fetching functions in parallel using Promise.all
+        Promise.all([fetchData(), fetchDataByTT()])
+            .then(() => {
+                // Do something after both requests have completed (optional).
                 // window.location.reload()
-                setInitialValues(data.data);
             })
-        }
-        getdata();
-
-
-
-        const getdatabytt = async () => {
-            const res = await axios.get(`${URL}/getlisttocartbytt/${userId}`);
-            setInitialValuebytt(res.data);
-        }
-        getdatabytt();
-
-    }, [URL]);
-
-    console.log(initialValues)
+            .catch((error) => {
+                // Handle any errors that occur while fetching the data.
+                console.error("Error in Promise.all:", error);
+            });
+    
+        // Make sure to include all dependencies in the dependency array.
+    }, []);
 
 
     const total = useMemo(() => {
