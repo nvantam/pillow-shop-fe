@@ -104,7 +104,7 @@ function Header() {
                     <Link to="/Product" className='menu_header'>Sản Phẩm</Link>
                 </div>
                 <div>
-                    <Link className='menu_header' to="/Blog" >Giới Thiệu</Link>
+                    <Link className='menu_header' to="/GioiThieu" >Giới Thiệu</Link>
                 </div>
                 <div >
                     <a className='menu_header' href='https://www.facebook.com/profile.php?id=61552477385506' target="_blank" rel="noopener noreferrer">Blog</a>

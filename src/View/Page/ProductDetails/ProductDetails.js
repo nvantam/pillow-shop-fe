@@ -29,6 +29,7 @@ function ProductDetails() {
         console.log(apis)
         if(!usename){
             window.location.href = '/Login';
+            return;
         }
         else{
             window.location.href = '/cart/' + id;  
@@ -40,8 +41,8 @@ function ProductDetails() {
                 quantity:1,
                 price: apis.price
             });
-            window.location.href = '/cart/' + id;  
 
+            return;
         }
     }
     return (
