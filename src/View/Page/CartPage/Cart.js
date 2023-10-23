@@ -16,7 +16,6 @@ function Cart() {
     const [adress, setAdress] = useState("")
     const [detail_adress, setdetail_adress] = useState("")
     const id = localStorage.getItem("id");
-    window.location.href = '/cart/' + id;  
 
 
     // const { userCartId } = useParams()
