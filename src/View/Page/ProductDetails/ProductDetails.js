@@ -39,7 +39,8 @@ function ProductDetails() {
                 nameproduct: apis.name,
                 productId: apis._id,
                 quantity:1,
-                price: apis.price
+                price: apis.price,
+                status: false
             });
 
             return;

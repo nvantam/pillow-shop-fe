@@ -15,8 +15,7 @@ function Cart() {
     const [number, setNumber] = useState("")
     const [adress, setAdress] = useState("")
     const [detail_adress, setdetail_adress] = useState("")
-    const id = localStorage.getItem("id");
-
+    
 
     // const { userCartId } = useParams()
     useEffect(() => {
