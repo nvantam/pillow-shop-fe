@@ -40,7 +40,7 @@ function ProductDetails() {
                 productId: apis._id,
                 quantity:1,
                 price: apis.price,
-                status: false
+                // status: false
             });
 
             return;
@@ -94,7 +94,9 @@ function ProductDetails() {
                         </div>
 
                         <div className='descrip'> {apis.description}</div>
-                        <Link className='deltail' >
+                        {/* <Link className='deltail' > */}
+                        <a href='#'>
+
                             <button onClick={() => clickAddToCart(apis)} className='explore_now' style={{
                                 marginTop: '30px',
                                 height: '40px',
@@ -105,7 +107,8 @@ function ProductDetails() {
                             }}>
                                 Thêm Vào Giỏ Hàng
                             </button>
-                        </Link>
+                        </a>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
