@@ -13,7 +13,7 @@ function Cart() {
     const [selectedProducts, setSelectedProducts] = useState([]);
     const URL = process.env.REACT_APP_URL;
 
-  
+    const [selectTotal, setSelectTotal] = useState("")
 
     const [name, setName] = useState("")
     const [number, setNumber] = useState("")
@@ -24,6 +24,7 @@ function Cart() {
     // const { userCartId } = useParams()
     useEffect(() => {
         const userId = localStorage.getItem("id");
+
         const getdata = async () => {
             const res = await axios(`${URL}/getlisttocart/${userId}`);
             setInitialValues(res.data);
@@ -35,6 +36,7 @@ function Cart() {
             setInitialValuebytt(res.data);
         }
         getdatabytt();
+
     }, []);
 
 
@@ -107,28 +109,27 @@ function Cart() {
     }
     //khai baos ddawj tắt model
     const [isLoad, setIsLoad] = useState(false)
-    console.log(selectedProducts)
 
     //xử lý đặt hàng
     const handerDatHang = async () => {
-       var check =  document.getElementById("myCheckbox").checked ;
-       var check1 =  document.getElementById("myCheckbox1").checked ;
-        if( name === "" ||
-        number === "" ||
-        adress === "" ||
-        detail_adress === "" ||
-        (check === false && check1 === false)) {
+        var check = document.getElementById("myCheckbox").checked;
+        var check1 = document.getElementById("myCheckbox1").checked;
+        if (name === "" ||
+            number === "" ||
+            adress === "" ||
+            detail_adress === "" ||
+            (check === false && check1 === false)) {
             alert("Vui lòng nhập đủ thông tin!!!")
-          
+
         }
         else {
             await axios.post(`${URL}/thanhtoan`, {
                 product: selectedProducts
             })
-            .then(() => {
-                alert('Đặt hàng thành công!!')
-                window.location.reload();
-            })
+                .then(() => {
+                    alert('Đặt hàng thành công!!')
+                    window.location.reload();
+                })
         }
     }
 
@@ -271,24 +272,24 @@ function Cart() {
                 }}>
                     <span style={{
                         position: 'relative',
-                        left: '-250px',
+                        left: '-248px',
                     }} >
                         {total}đ
                     </span>
-                    
-                        <button style={{
-                            backgroundColor: '#B08EAD',
-                            fontSize: '18px',
-                            position: 'relative',
-                            left: '-183px',
-                            color: 'white',
-                            border: '1px solid gray',
-                            borderRadius: '8px',
-                            
-                        }} onClick={() => handlePay()} >
-                            <div  href="#my-didivlog" className='calldialog' >Thanh toán</div>
-                        </button>
-                  
+
+                    <button style={{
+                        backgroundColor: '#B08EAD',
+                        fontSize: '18px',
+                        position: 'relative',
+                        left: '-183px',
+                        color: 'white',
+                        border: '1px solid gray',
+                        borderRadius: '8px',
+
+                    }} onClick={() => handlePay()} >
+                        <div href="#my-didivlog" className='calldialog' >Thanh toán</div>
+                    </button>
+
                 </div>
                 <hr style={{ width: '75%' }} />
                 <div style={{
@@ -296,7 +297,7 @@ function Cart() {
                     fontSize: '27px',
                     fontWeight: 600,
                     marginTop: '50px',
-                    textAlign:'center'
+                    textAlign: 'center'
                 }}>
                     Sản phẩm đã thanh toán
                 </div>
@@ -313,7 +314,7 @@ function Cart() {
                         display: 'flex',
                         justifyContent: 'space-around',
                         alignItems: 'center',
-                       
+
                     }}>
                         <h4 style={{
                             marginLeft: '-280px',
@@ -427,8 +428,8 @@ function Cart() {
                             <span style={{ textAlign: 'center', color: 'red' }}><h3>Thanh Toán</h3> </span>
 
                             <h4 style={{ marginBottom: '10px', color: 'red' }}> Địa chỉ nhận hàng </h4>
-                            <input type="text" placeholder="Nhập tên của bạn"  onChange={(e) => setName(e.target.value)}/>
-                            <input type="text" placeholder="Nhập số điện thoại" onChange={(e) => setNumber(e.target.value)}/>
+                            <input type="text" placeholder="Nhập tên của bạn" onChange={(e) => setName(e.target.value)} />
+                            <input type="text" placeholder="Nhập số điện thoại" onChange={(e) => setNumber(e.target.value)} />
                             <input type="text" placeholder="Địa chỉ-Tỉnh-Thành Phố" onChange={(e) => setAdress(e.target.value)} />
                             <input type="text" placeholder="Số nhà cụ thể" onChange={(e) => setdetail_adress(e.target.value)} />
 

@@ -103,8 +103,10 @@ function Header() {
                 <div >
                     <Link to="/Product" className='menu_header'>Sản Phẩm</Link>
                 </div>
+                <div>
+                    <Link className='menu_header' to="/Blog" >Giới Thiệu</Link>
+                </div>
                 <div >
-                    {/* <Link className='menu_header' to="/Blog" >Blog</Link> */}
                     <a className='menu_header' href='https://www.facebook.com/profile.php?id=61552477385506' target="_blank" rel="noopener noreferrer">Blog</a>
                 </div>
                 <div style={{
@@ -176,7 +178,7 @@ function Header() {
                     width: '15%',
                     position: 'relative',
                     top: '-4px',
-                    left: '-65px',
+                    left: '-55px',
                 }} />
                 <div >
 

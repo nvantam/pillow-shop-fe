@@ -31,6 +31,7 @@ function ProductDetails() {
             window.location.href = '/Login';
         }
         else{
+            window.location.href = '/cart/' + id;  
             axios.post(`${URL}/addtocart`, {
                 userid: id,
                 img: apis.img,
@@ -39,7 +40,8 @@ function ProductDetails() {
                 quantity:1,
                 price: apis.price
             });
-            window.location.href = '/cart/' + id;      
+            window.location.href = '/cart/' + id;  
+
         }
     }
     return (
