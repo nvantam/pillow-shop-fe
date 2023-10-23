@@ -9,16 +9,14 @@ import '../CartPage/Cart.css'
 function Cart() {
     const [initialValues, setInitialValues] = useState([]);
     const [initialValuebytts, setInitialValuebytt] = useState([]);
-
     const [selectedProducts, setSelectedProducts] = useState([]);
     const URL = process.env.REACT_APP_URL;
-
-    const [selectTotal, setSelectTotal] = useState("")
-
     const [name, setName] = useState("")
     const [number, setNumber] = useState("")
     const [adress, setAdress] = useState("")
     const [detail_adress, setdetail_adress] = useState("")
+    const id = localStorage.getItem("id");
+    window.location.href = '/cart/' + id;  
 
 
     // const { userCartId } = useParams()

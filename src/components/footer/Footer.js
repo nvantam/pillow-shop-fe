@@ -44,7 +44,7 @@ function Footer() {
                         justifyContent: 'center',
                         marginLeft: '0px',
                     }}>
-                        Website Thương Mại Điện Tử
+                        Thương Mại Điện Tử - Cửa Hàng TTL
                     </h4>
 
                     <div className="footer-links">
