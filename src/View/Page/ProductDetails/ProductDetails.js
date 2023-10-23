@@ -32,7 +32,7 @@ function ProductDetails() {
             return;
         }
         else {
-            window.location.href = '/cart/' + id;
+          
             axios.post(`${URL}/addtocart`, {
                 userid: id,
                 img: apis.img,
@@ -41,7 +41,10 @@ function ProductDetails() {
                 quantity: 1,
                 price: apis.price,
                 status: false
-            });
+            })
+            .then(() => {
+                window.location.href = '/cart/' + id;
+            })
             // window.location.href = '#';
             return;
         }
