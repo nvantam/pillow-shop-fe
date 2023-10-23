@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../../components/header/Header'
 import Footer from '../../../components/footer/Footer'
-import { Link, useParams} from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_API_URL } from '../../../config'
 import './ProductDetail.css'
@@ -20,29 +20,30 @@ function ProductDetails() {
             setApi(res.data);
         })
     }, []);
-    
+
     const usename = localStorage.getItem("usename");
     const id = localStorage.getItem("id");
 
     // const location = useLocation()
-    const clickAddToCart =(apis)=>{
+    const clickAddToCart = (apis) => {
         console.log(apis)
-        if(!usename){
+        if (!usename) {
             window.location.href = '/Login';
             return;
         }
-        else{
-            window.location.href = '/cart/' + id;  
+        else {
+            
             axios.post(`${URL}/addtocart`, {
                 userid: id,
                 img: apis.img,
                 nameproduct: apis.name,
                 productId: apis._id,
-                quantity:1,
+                quantity: 1,
                 price: apis.price,
-                // status: false
+                status: false
             });
-           // window.location.href = '#';
+            window.location.href = '/cart/' + id;
+            // window.location.href = '#';
             return;
         }
     }
@@ -63,7 +64,7 @@ function ProductDetails() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'white',
-                    objectfit : 'cover'
+                    objectfit: 'cover'
                 }}>
                     <h3>Product Detail</h3>
                 </div>
@@ -94,21 +95,16 @@ function ProductDetails() {
                         </div>
 
                         <div className='descrip'> {apis.description}</div>
-                        {/* <Link className='deltail' > */}
-                        {/* <a href='#'> */}
-
-                            <button onClick={() => clickAddToCart(apis)} className='explore_now' style={{
-                                marginTop: '30px',
-                                height: '40px',
-                                width: '170px',
-                                fontSize: '14px',
-                                textAlign: 'center',
-                                padding: '12px 14px 20px 10px',
-                            }}>
-                                Thêm Vào Giỏ Hàng
-                            </button>
-                        {/* </a> */}
-                        {/* </Link> */}
+                        <button onClick={() => clickAddToCart(apis)} className='explore_now' style={{
+                            marginTop: '30px',
+                            height: '40px',
+                            width: '170px',
+                            fontSize: '14px',
+                            textAlign: 'center',
+                            padding: '12px 14px 20px 10px',
+                        }}>
+                            Thêm Vào Giỏ Hàng
+                        </button>
                     </div>
                 </div>
             </div>

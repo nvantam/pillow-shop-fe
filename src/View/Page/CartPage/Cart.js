@@ -19,7 +19,6 @@ function Cart() {
     // const { userCartId } = useParams()
     useEffect(() => {
         const userId = localStorage.getItem("id");
-        
         const getdata = async () => {
             const res = await axios(`${URL}/getlisttocart/${userId}`);
             setInitialValues(res.data);
