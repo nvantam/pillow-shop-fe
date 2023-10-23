@@ -42,7 +42,7 @@ function ProductDetails() {
                 price: apis.price,
                 // status: false
             });
-
+           // window.location.href = '#';
             return;
         }
     }
@@ -95,7 +95,7 @@ function ProductDetails() {
 
                         <div className='descrip'> {apis.description}</div>
                         {/* <Link className='deltail' > */}
-                        <a href='#'>
+                        {/* <a href='#'> */}
 
                             <button onClick={() => clickAddToCart(apis)} className='explore_now' style={{
                                 marginTop: '30px',
@@ -107,7 +107,7 @@ function ProductDetails() {
                             }}>
                                 Thêm Vào Giỏ Hàng
                             </button>
-                        </a>
+                        {/* </a> */}
                         {/* </Link> */}
                     </div>
                 </div>
