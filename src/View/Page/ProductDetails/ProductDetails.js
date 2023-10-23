@@ -26,7 +26,6 @@ function ProductDetails() {
 
     // const location = useLocation()
     const clickAddToCart = (apis) => {
-        console.log(apis)
         if (!usename) {
             window.location.href = '/Login';
             return;
@@ -44,9 +43,16 @@ function ProductDetails() {
             })
             .then(() => {
                 window.location.href = '/cart/' + id;
+                
             })
+            .catch(error => {
+                console.error("Lỗi khi thêm vào giỏ hàng:", error);
+              });
+
+              alert("Thêm vào giỏ hàng thành công!!!")
+
             // window.location.href = '#';
-            return;
+            // return;
         }
     }
     return (
