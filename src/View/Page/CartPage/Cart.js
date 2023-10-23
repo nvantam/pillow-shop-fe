@@ -113,10 +113,6 @@ function Cart() {
     const handerDatHang = async () => {
        var check =  document.getElementById("myCheckbox").checked ;
        var check1 =  document.getElementById("myCheckbox1").checked ;
-       console.log({check})
-       console.log({check1})
-
-
         if( name === "" ||
         number === "" ||
         adress === "" ||

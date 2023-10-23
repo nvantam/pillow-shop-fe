@@ -1,0 +1,13 @@
+.footer-link{
+    text-decoration: none;
+    color: black;
+   
+}
+.footer-list{
+    list-style: none;
+    align-items: start;
+}
+.footer-list.li {
+    margin-left: -30px;
+    padding: 0;
+}

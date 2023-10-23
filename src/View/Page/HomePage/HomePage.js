@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../../components/header/Header'
 import Footer from '../../../components/footer/Footer'
-import Product from '../ProductPage/Product'
 import './HomePage.css'
-import Lib from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 function HomePage() {
 
@@ -18,27 +16,39 @@ function HomePage() {
             .then(
                 data => setApis(data.slice(0, 6))
             )
-    }, [])
+    }, []);
     return (
         <div>
             <Header />
             <div>
+                <div style={{
+                    backgroundColor: '#B08EAD',
+                    marginTop: '70px',
+                    fontSize: '40px',
+                    height: '350px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                }}>
+                    <h3>Trang Chủ</h3> </div>
                 {/* khối 1 */}
                 <div style={{
                     display: 'flex',
                     justifyContent: 'space-around',
                     marginTop: '-23px',
                     marginLeft: '15px',
+                    width: '100%'
                 }}>
                     <div style={{
-
+                        width: '50%'
                     }}>
                         <div style={{
                             margin: '170px 0px 10px 110px',
                             fontSize: '30px',
                             textAlign: 'left',
                             color: '#4B3049',
-
+                            
                         }}>
                             <h1>Gối chất lượng tốt nhất</h1>
 
@@ -46,9 +56,10 @@ function HomePage() {
                         <div style={{
                             fontSize: '18px',
                             marginLeft: '110px',
-                            width:'650px',
                             textAlign: 'left',
                             color: '#795376',
+                            width:'80%'
+
                         }}>
                             Nơi bạn có thể khám phá và mua sắm những sản phẩm gối chất lượng, tạo sự thoải mái tối đa cho giấc ngủ của bạn
                         </div>
@@ -62,18 +73,19 @@ function HomePage() {
                                 marginLeft: '110px',
                                 textAlign: 'center',
                                 padding: '15px 10px 5px 15px',
-                            }} >
+                            }}>
                                 Shop now
                             </div>
                         </Link>
 
                     </div>
-                    <div>
+                    <div style={{width:'50%'}}>
                         <img
                             src='https://preview.colorlib.com/theme/pillowmart/img/banner.png.webp'
                             style={{
-                                width: '90%',
+                                width: '83%',
                                 marginRight: '-70px',
+                                marginTop: '120px'
                             }}
                         />
                     </div>
@@ -86,37 +98,42 @@ function HomePage() {
                     marginTop: '200px',
                     marginBottom: '120px',
                     marginLeft: '15px',
+                    width:'100%'
                 }}>
                     <div style={{
                         display: 'flex',
                         justifyContent: 'space-around',
-                        marginLeft: '-45px',
+                        marginLeft: '-100px',
                         marginLeft: '93px',
+                        width:'50%'
+
                     }} >
                         <img style={{
                             marginTop: '-40px',
                             marginBottom: '40px',
-                            marginLeft: '24px',
+                            marginLeft: '20 px',
+                            // width:'450px'
 
                         }} src='https://preview.colorlib.com/theme/pillowmart/img/product_overlay.png.webp' />
                         <div>
                             <img style={{
                                 marginLeft: '-350px',
+                                // width:'450px'
 
                             }} src='https://preview.colorlib.com/theme/pillowmart/img/single_product_1.png.webp' />
                         </div>
                     </div>
                     <div style={{
-                        margin: '70px 80px 10px 130px',
+                        margin: '70px 80px 10px 46px',
                         //border:'1px solid red',
                         textAlign: 'left',
+                        width:'50%'
 
                     }}>
                         <div style={{
                             fontSize: '20px',
                             //border: '1px solid red',
                             textAlign: 'left',
-
                             color: '#B08EAD',
 
                         }}>
@@ -127,6 +144,7 @@ function HomePage() {
                             //border: '1px solid red',
                             textAlign: 'left',
                             color: '#4B3049',
+                            width:'85%'
 
                         }}>
                             <h2>Vỏ gối với họa tiết hiện đại và thiết kế ngắn gọn</h2>

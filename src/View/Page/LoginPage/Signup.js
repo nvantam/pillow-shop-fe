@@ -8,6 +8,11 @@ function Signup() {
     const [usernsme, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [repassword, setRePassword] = useState("")
+    const [showError, setShowError] = useState(false);
+    const [showError1, setShowError1] = useState(false);
+    const [showError2, setShowError2] = useState(false);
+
+
     const URL = process.env.REACT_APP_URL;
 
     function isGmailEmail(email) {
@@ -43,8 +48,16 @@ function Signup() {
                         return;
                     }
                 })
-        } else {
-            alert("Thông tin không hợp lệ");
+        } if (!isGmailEmail(usernsme)) {
+            setShowError(true);
+        }if (isGmailEmail(usernsme)) {
+            setShowError(false);
+        }if(password.length<6){
+            setShowError1(true);
+        }if(password.length>6){
+            setShowError1(false);
+        }if(password !=repassword){
+            setShowError2(true);
         }
     }
 
@@ -87,12 +100,15 @@ function Signup() {
                             }}><CloseOutlined /></div>
                         </Link> <br />
                         <div style={{ color: 'gray' }}>Welcome! Login to get amazing discounts and offers only for you</div><br />
-                        <div style={{ color: 'gray', fontSize: '16px', marginTop: '20px' }}>Gmail:</div>
+                        <div style={{ color: 'gray', fontSize: '16px', marginTop: '-10px' }}>Gmail:</div>
                         <input onChange={e => setUsername(e.target.value)} type='email' required style={{ border: '1px solid gray', borderRadius: '10px', height: '30px', width: '300px' }} />
+                        {showError&& <p style={{color:'red',fontSize:'14px'}}>Vui lòng nhập đúng gmail!</p>}
                         <div id='password' style={{ color: 'gray', fontSize: '16px', marginTop: '20px' }}>Mật khẩu:</div>
                         <input type='password' onChange={e => setPassword(e.target.value)} style={{ border: '1px solid gray', borderRadius: '10px', height: '30px', width: '300px' }} />
+                        {showError1&& <p style={{color:'red',fontSize:'14px'}}>Mật khẩu phải từ 6 kí tự!</p>}
                         <div id='repassword' style={{ color: 'gray', fontSize: '16px', marginTop: '20px' }}>Nhập lại mật khẩu:</div>
                         <input type='password' onChange={e => setRePassword(e.target.value)} style={{ border: '1px solid gray', borderRadius: '10px', height: '30px', width: '300px' }} /><br />
+                        {showError2&& <p style={{color:'red',fontSize:'14px'}}>Vui lòng nhập đúng mật khẩu!</p>}
                         <div style={{ marginTop: '30px', textAlign: 'center', position: "relative", left: '30px' }}>
                             <button onClick={() => Signup()} style={{
                                 backgroundColor: '#B08EAD',

@@ -43,14 +43,13 @@
     margin-left: -40px;
     display: flex;
     justify-content: flex-start;   
-    width: 120px;
-    line-height: 1px;
+    width: 100%;
+    /* line-height: 1px; */
     margin-top: 30px;
     color: red; 
     font-weight: 550;
     display: none;
     z-index: 999;
-
 }
 
 .user:hover .logout{
@@ -77,15 +76,3 @@
     color: #B08EAD;
 
  }
- /* .container {
-    max-width: 150px; /* Điều chỉnh giá trị tùy theo nhu cầu của bạn */
-    /* overflow: hidden;
-    white-space: nowrap;
-  } */
-  
-  /* Khi nội dung vượt quá chiều rộng của .container, hiển thị ... ở cuối */
-  /* .container .text {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  } */

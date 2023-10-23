@@ -11,9 +11,12 @@ import { Dropdown } from 'antd';
 function Header() {
 
     const usename = localStorage.getItem("usename");
-    const [search, setSearch] = useState('');
+    const userid = localStorage.getItem("id");
 
-    console.log(search);
+    const [search, setSearch] = useState('');
+    const [usernameLogin, setUsernameLogin] = useState('');
+
+     
     const logout = () => {
         localStorage.clear();
         window.location.href = '/Login';
@@ -23,7 +26,7 @@ function Header() {
             window.location.href = '/Login';
         }
         else
-            window.location.href = '/Cart';
+            window.location.href = '/Cart/' + userid;
     }
     const [api, setApis] = useState()
     const [isLoad, setIsLoad] = useState(false)
@@ -38,21 +41,34 @@ function Header() {
             })
             .then(
                 data => {
-                    console.log(data)
                     setApis(data.metadata.slice(0, 3))
-
                 }
             )
     }
     useEffect(() => {
         if (search == "") {
             setIsLoad(false)
+            
         }
         else {
-
             setIsLoad(true)
         }
-    }, [search])
+        if (!usename) {
+            setUsernameLogin(undefined);
+            return;
+        }
+        if(usename=='admin'){
+            setUsernameLogin(usename);
+            return;
+        }
+        else{
+            const email = usename;
+            const atIndex = email.indexOf('@');
+            setUsernameLogin(email.substring(0, atIndex));
+            return;
+        }
+       
+    }, [search,usernameLogin])
     return (
         <div style={{
             position: 'fixed',
@@ -60,7 +76,7 @@ function Header() {
             display: 'flex',
             width: '100%',
             justifyContent: 'space-around',
-            height: '30px',
+            height: '40px',
             backgroundColor: 'white',
             top: '0px',
             zIndex: 1,
@@ -89,20 +105,20 @@ function Header() {
                 </div>
                 <div >
                     {/* <Link className='menu_header' to="/Blog" >Blog</Link> */}
-                    <a className='menu_header' href="https://www.facebook.com/profile.php?id=61552477385506">Blog</a>
+                    <a className='menu_header' href='https://www.facebook.com/profile.php?id=61552477385506' target="_blank" rel="noopener noreferrer">Blog</a>
                 </div>
                 <div style={{
                     width: '200px',
                     marginRight: '-100px',
                 }}  >
-                    <input onChange={e => handelSearch(e)} style={{ position: 'relative', border: '1px solid gray', borderRadius: '6px', height: '25px', width: '240px', marginRight: '-140px', top:'-4px' }} placeholder="Tìm kiếm"
+                    <input onChange={e => handelSearch(e)} style={{ position: 'relative', border: '1px solid gray', borderRadius: '6px', height: '25px', width: '240px', marginRight: '-140px', top: '-4px' }} placeholder="Tìm kiếm"
                     />
                     {isLoad &&
                         <Dropdown
                             arrow={false}
                             overlay={
                                 <div style={{
-                                    marginTop: '22spx',
+                                    marginTop: '22px',
                                     width: '90px',
                                     position: 'absolute',
                                     left: '65px',
@@ -155,46 +171,43 @@ function Header() {
                 marginTop: '10px',
             }}>
 
-                <SearchOutlined className='menu_header' style={{
-                    position: 'relative',
-                    left: '-20px',
-                    marginTop: '-3px'
-                }} />
 
                 <ShoppingCartOutlined onClick={tocart} className='menu_header' style={{
-                    width:'50px',
+                    width: '15%',
                     position: 'relative',
-                    top:'-3px',
-                    left: '0px',
+                    top: '-4px',
+                    left: '-65px',
                 }} />
                 <div >
 
-                {usename == undefined ?
-                    <Link className='menu_header' to="/Login" >
-                        <div className='menu_header' style={{
-                            width: '260px',
-                            fontSize: '20px',
-                            marginTop: '-8px',
-                            //marginLeft: '0px',
-                            position:'relative',
-                            right:'-86px'
-                        }}>
-                            Đăng nhập
-                        </div>
+                    {usernameLogin == undefined ?
+                        <Link className='menu_header' to="/Login" >
+                            <div className='menu_header' style={{
+                                width: '100%',
 
-                    </Link>
-                    : <div  className='user container' style={{
-                        position: 'relative',
-                        right: '-40px',
-                        fontSize:'18px',
-                        marginTop: '-6px',
-                        width: '300px'
-                    }} >{usename}
-                        <ul>
-                            <li className='logout' onClick={logout}> Đăng xuất</li>
-                        </ul>
-                    </div>
-                }
+                                fontSize: '20px',
+                                marginTop: '-8px',
+                                paddingLeft: '10px',
+                                paddingRight: '10px',
+                                position: 'relative',
+                                left: '-30px'
+                            }}>
+                                Đăng Nhập
+                            </div>
+
+                        </Link>
+                        : <div className='user' style={{
+                            position: 'relative',
+                            right: '-15px',
+                            fontSize: '18px',
+                            marginTop: '-6px',
+                            width: '140px'
+                        }} >{usernameLogin}
+                            <ul>
+                                <li className='logout' onClick={logout}> Đăng xuất</li>
+                            </ul>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
