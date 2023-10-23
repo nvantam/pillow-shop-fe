@@ -20,13 +20,15 @@ function Cart() {
     useEffect(() => {
         const userId = localStorage.getItem("id");
         const getdata = async () => {
-            const res = await axios(`${URL}/getlisttocart/${userId}`);
+            const res = await axios.get(`${URL}/getlisttocart/${userId}`);
             setInitialValues(res.data);
         }
         getdata();
 
+
+
         const getdatabytt = async () => {
-            const res = await axios(`${URL}/getlisttocartbytt/${userId}`);
+            const res = await axios.get(`${URL}/getlisttocartbytt/${userId}`);
             setInitialValuebytt(res.data);
         }
         getdatabytt();
