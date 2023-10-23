@@ -22,6 +22,7 @@ function Cart() {
         const getdata = async () => {
          await axios.get(`${URL}/getlisttocart/${userId}`)
             .then(data => {
+                // window.location.reload()
                 setInitialValues(data.data);
             })
         }
@@ -35,8 +36,9 @@ function Cart() {
         }
         getdatabytt();
 
-    }, [userId]);
+    }, [URL]);
 
+    console.log(initialValues)
 
 
     const total = useMemo(() => {
