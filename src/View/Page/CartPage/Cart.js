@@ -15,13 +15,15 @@ function Cart() {
     const [number, setNumber] = useState("")
     const [adress, setAdress] = useState("")
     const [detail_adress, setdetail_adress] = useState("")
+    const userId = localStorage.getItem("id");
 
     // const { userCartId } = useParams()
     useEffect(() => {
-        const userId = localStorage.getItem("id");
         const getdata = async () => {
-            const res = await axios.get(`${URL}/getlisttocart/${userId}`);
-            setInitialValues(res.data);
+         await axios.get(`${URL}/getlisttocart/${userId}`)
+            .then(data => {
+                setInitialValues(data.data);
+            })
         }
         getdata();
 
@@ -33,7 +35,7 @@ function Cart() {
         }
         getdatabytt();
 
-    }, []);
+    }, [userId]);
 
 
 
