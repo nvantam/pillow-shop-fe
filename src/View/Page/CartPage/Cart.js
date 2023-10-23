@@ -19,32 +19,24 @@ function Cart() {
 
     // const { userCartId } = useParams()
     useEffect(() => {
-        // Define an async function to get data for the main list
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${URL}/getlisttocart/${userId}`);
                 setInitialValues(response.data);
             } catch (error) {
-                // Handle any errors, e.g., set an error state.
-                console.error("Error fetching main list data:", error);
             }
         };
     
-        // Define another async function to get data for the secondary list
         const fetchDataByTT = async () => {
             try {
                 const response = await axios.get(`${URL}/getlisttocartbytt/${userId}`);
                 setInitialValuebytt(response.data);
             } catch (error) {
-                // Handle any errors, e.g., set an error state.
-                console.error("Error fetching secondary list data:", error);
             }
         };
     
-        // Call the data-fetching functions in parallel using Promise.all
         Promise.all([fetchData(), fetchDataByTT()])
             .then(() => {
-                // Do something after both requests have completed (optional).
                 // window.location.reload()
             })
             .catch((error) => {

@@ -31,7 +31,6 @@ function ProductDetails() {
             return;
         }
         else {
-          
             axios.post(`${URL}/addtocart`, {
                 userid: id,
                 img: apis.img,
@@ -42,17 +41,12 @@ function ProductDetails() {
                 status: false
             })
             .then(() => {
-                window.location.href = '/cart/' + id;
-                
             })
             .catch(error => {
                 console.error("Lỗi khi thêm vào giỏ hàng:", error);
               });
-
               alert("Thêm vào giỏ hàng thành công!!!")
-
-            // window.location.href = '#';
-            // return;
+              window.location.href = '/cart/' + id;
         }
     }
     return (
