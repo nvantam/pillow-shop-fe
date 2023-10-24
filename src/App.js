@@ -12,7 +12,6 @@ import Login from './View/Page/LoginPage/Login';
 import Signup from './View/Page/LoginPage/Signup';
 import Pay from './View/Page/PayPage/Pay';
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>

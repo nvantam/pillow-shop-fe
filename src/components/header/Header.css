@@ -76,3 +76,8 @@
     color: #B08EAD;
 
  }
+ .selectedmenu {
+    color: #ff0000; /* Đổi màu thành đỏ khi được chọn */
+    /* font-weight: bold; Chữ in đậm khi được chọn */
+  }
+

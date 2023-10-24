@@ -3,11 +3,9 @@ import Header from '../../../components/header/Header'
 import Footer from '../../../components/footer/Footer'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
-import { BASE_API_URL } from '../../../config'
 import './Product.css'
 function Product() {
   const URL = process.env.REACT_APP_URL;
-
   const [apis, setApis] = useState([])
   useEffect(() => {
     fetch(`${URL}/getproducts`)

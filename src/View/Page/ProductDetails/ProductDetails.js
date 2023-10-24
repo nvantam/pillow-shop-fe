@@ -13,7 +13,6 @@ function ProductDetails() {
     useEffect(() => {
         const getdata = async () => {
             const data = await axios.get(`${URL}/getdetail/${productId}`);
-            console.log(data)
             return data;
         }
         getdata().then(res => {
@@ -45,7 +44,7 @@ function ProductDetails() {
             .catch(error => {
                 console.error("Lỗi khi thêm vào giỏ hàng:", error);
               });
-              alert("Thêm vào giỏ hàng thành công!!!")
+              alert("Thêm vào giỏ hàng thành công!!")
               window.location.href = '/cart/' + id;
         }
     }
@@ -84,7 +83,6 @@ function ProductDetails() {
                     </div>
 
                     <div>
-
                         <div>
                             <div >
                                 <h3 style={{ marginTop: '80px' }}>

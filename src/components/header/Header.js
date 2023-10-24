@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { SearchOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import React, { useEffect, useState,memo } from 'react';
+import {ShoppingCartOutlined } from '@ant-design/icons';
 import '../../View/Page/ProductPage/Product';
 import { Link } from "react-router-dom";
 import './Header.css';
-// import { URL } from '../../config';
 import { DownOutlined } from '@ant-design/icons';
-// import type { MenuProps } from 'antd';s
 import { Dropdown } from 'antd';
+import Menu from './Menu'
 
 function Header() {
-
     const usename = localStorage.getItem("usename");
     const userid = localStorage.getItem("id");
-
     const [search, setSearch] = useState('');
     const [usernameLogin, setUsernameLogin] = useState('');
 
-     
     const logout = () => {
         localStorage.clear();
         window.location.href = '/Login';
@@ -28,6 +24,7 @@ function Header() {
         else
             window.location.href = '/Cart/' + userid;
     }
+
     const [api, setApis] = useState()
     const [isLoad, setIsLoad] = useState(false)
     const URL = process.env.REACT_APP_URL;
@@ -48,7 +45,6 @@ function Header() {
     useEffect(() => {
         if (search == "") {
             setIsLoad(false)
-            
         }
         else {
             setIsLoad(true)
@@ -67,8 +63,9 @@ function Header() {
             setUsernameLogin(email.substring(0, atIndex));
             return;
         }
-       
     }, [search,usernameLogin])
+    
+
     return (
         <div style={{
             position: 'fixed',
@@ -81,9 +78,7 @@ function Header() {
             top: '0px',
             zIndex: 1,
         }}>
-
             <Link className='menu_header' to="/HomePage">
-
                 <div className='menu_header' style={{
                     marginLeft: '20px',
                 }}>
@@ -92,22 +87,15 @@ function Header() {
             </Link>
             <div style={{
                 display: 'flex',
-                justifyContent: ' space-around',
+                justifyContent: ' space-around', 
                 width: '40%',
                 fontSize: '19px',
                 marginTop: '5px',
             }}>
-                <div>
-                    <Link to="/HomePage" className='menu_header' >Trang Chủ</Link>
-                </div>
+               <Menu/>
                 <div >
-                    <Link to="/Product" className='menu_header'>Sản Phẩm</Link>
-                </div>
-                <div>
-                    <Link className='menu_header' to="/GioiThieu" >Giới Thiệu</Link>
-                </div>
-                <div >
-                    <a className='menu_header' href='https://www.facebook.com/profile.php?id=61552477385506' target="_blank" rel="noopener noreferrer">Blog</a>
+                    <Link className='menu_header' to='https://www.facebook.com/profile.php?id=61552477385506'  target="_blank" 
+                    rel="noopener noreferrer">Blog</Link>
                 </div>
                 <div style={{
                     width: '200px',
@@ -216,4 +204,4 @@ function Header() {
     )
 }
 
-export default Header
+export default memo(Header)
