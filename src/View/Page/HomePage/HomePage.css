@@ -1,42 +1,57 @@
-.shop_now {
-    
-    background-color: #B08EAD;
-    color: white; 
-    transition: color 0.3s, border 0,3 ; 
-    border: 1px solid #B08EAD;
-    border-radius: 10px 10px 10px 10px;
-}
- .shop_now:hover {
 
-    background-color: white; 
-   
-} 
-.shop_now:hover {
-    color: #B08EAD; 
-} 
-.shop_now:hover {
-    border: 2px solid #c973c2;  
-} 
-.explore_now{
-    background-color: white;
-    color: #B08EAD; 
-    transition: color 0.3s, border 0,3 ; 
+.shop_now {
+
+    background-color: #B08EAD;
+    color: white;
+    transition: color 0.3s, border 0, 3;
     border: 1px solid #B08EAD;
     border-radius: 10px 10px 10px 10px;
 }
-.explore_now:hover{
-    background-color:#B08EAD;
+
+.shop_now:hover {
+
+    background-color: white;
+
 }
-.explore_now:hover{
+
+.shop_now:hover {
+    color: #B08EAD;
+}
+
+.shop_now:hover {
+    border: 2px solid #c973c2;
+}
+
+.explore_now {
+    background-color: white;
+    color: #B08EAD;
+    transition: color 0.3s, border 0, 3;
+    border: 1px solid #B08EAD;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.explore_now:hover {
+    background-color: #B08EAD;
+}
+
+.explore_now:hover {
     color: white;
 }
-.item{
+
+.item {
     text-decoration: none;
     color: #4B3049;
 }
-.name_product:hover{
+
+.name_product:hover {
     color: #B08EAD;
 }
-.name_product{
+
+.name_product {
     width: 350px;
+}
+
+#rotatedImage {
+    width: 100%;
+    transform: rotate(90deg);
 }

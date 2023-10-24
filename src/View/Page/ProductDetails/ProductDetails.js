@@ -68,7 +68,7 @@ function ProductDetails() {
                     color: 'white',
                     objectfit: 'cover'
                 }}>
-                    <h3>Product Detail</h3>
+                    <h3>Chi Tiết Sản Phẩm</h3>
                 </div>
                 <div style={{
                     display: 'flex',

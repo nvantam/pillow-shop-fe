@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../../components/header/Header'
 import Footer from '../../../components/footer/Footer'
-
+import '../BlogPage/Blog.css'
 function Blog() {
   return (
     <div>
@@ -39,6 +39,9 @@ function Blog() {
               Chúng tôi tự hào giới thiệu website bán gối của mình, nơi bạn có thể tìm thấy những sản phẩm gối tuyệt vời với đa dạng kiểu dáng, chất liệu và mức giá phù hợp với nhu cầu của mọi người. Với sứ mệnh đem đến sự thoải mái và sự hài lòng cho khách hàng, chúng tôi cam kết cung cấp những sản phẩm gối chất lượng và dịch vụ hoàn hảo.
 
             </div>
+            <div class="video-container">
+              <iframe width="100%" height="465" src="https://www.youtube.com/embed/l3lrw7XPcOo" frameborder="0" allowfullscreen></iframe>
+            </div>
             <div style={{
               lineHeight: '1.5'
             }}>
@@ -54,9 +57,6 @@ function Blog() {
 
               Gối Trang Trí Nội Thất: Nếu bạn đang tìm kiếm gối để trang trí ngôi nhà của mình, chúng tôi có nhiều tùy chọn về gối
               trang trí với các họa tiết và màu sắc phong cách.<br /><br />
-
-              Gối Đặc Biệt: Ngoài ra, chúng tôi còn cung cấp các loại gối đặc biệt như gối massage, gối cổ, và nhiều sản phẩm khác.
-
             </div>
 
             <div style={{
@@ -66,18 +66,13 @@ function Blog() {
                 Chất Lượng Vượt Trội
 
               </h4>
-              Chất lượng là ưu tiên hàng đầu tại website bán gối của chúng tôi. 
-              Tất cả sản phẩm được chọn lựa kỹ càng và kiểm tra để đảm bảo rằng chúng đáp ứng tiêu chuẩn cao nhất. 
-              Chất liệu làm gối được lựa chọn với cẩn thận để đảm bảo sự thoải mái và bền bỉ. Chúng tôi tin rằng việc sử dụng sản phẩm gối 
+              Chất lượng là ưu tiên hàng đầu tại website bán gối của chúng tôi.
+              Tất cả sản phẩm được chọn lựa kỹ càng và kiểm tra để đảm bảo rằng chúng đáp ứng tiêu chuẩn cao nhất.
+              Chất liệu làm gối được lựa chọn với cẩn thận để đảm bảo sự thoải mái và bền bỉ. Chúng tôi tin rằng việc sử dụng sản phẩm gối
               của chúng tôi sẽ làm cho giấc ngủ của bạn trở nên hoàn hảo hơn.<br /><br />
-              Chúng tôi cam kết đem đến trải nghiệm mua sắm trực tuyến thoải mái và tận tâm. 
-              Chúng tôi luôn sẵn sàng hỗ trợ bạn trong việc lựa chọn sản phẩm phù hợp và giải đáp mọi thắc mắc. 
+              Chúng tôi cam kết đem đến trải nghiệm mua sắm trực tuyến thoải mái và tận tâm.
+              Chúng tôi luôn sẵn sàng hỗ trợ bạn trong việc lựa chọn sản phẩm phù hợp và giải đáp mọi thắc mắc.
               Giao hàng nhanh chóng và dịch vụ khách hàng xuất sắc là những gì bạn có thể mong đợi từ chúng tôi. <br /><br />
-              Hãy trải nghiệm sự thoải mái và chất lượng vượt trội của sản phẩm gối tại website bán gối của chúng tôi.
-               Dù bạn đang cần gối để nâng cao chất lượng giấc ngủ hay để trang trí không gian sống của bạn, 
-               chúng tôi sẽ đồng hành cùng bạn trong hành trình đó. Đặt hàng ngay hôm nay để bắt đầu hưởng mọi lợi ích mà sản phẩm gối đẳng 
-               cấp mang lại.  <br />
-
               <h3 style={{ color: 'rgb(75, 48, 73)' }}>
                 Hướng dẫn mua hàng
               </h3>

@@ -19,19 +19,21 @@ function HomePage() {
     }, []);
     return (
         <div>
-            <Header />
-            <div>
+            <Header/>
+            <div style={{
+                
+
+            }}>
                 <div style={{
-                    backgroundColor: '#B08EAD',
-                    marginTop: '70px',
-                    fontSize: '40px',
-                    height: '350px',
+                    width:'100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'white',
                 }}>
-                    <h3>Trang Chủ</h3> </div>
+                    <img style={{
+                    width: '99%', height:'500px'
+                }}  src="https://www.rendersmasarq.com.ar/wp-content/uploads/2020/11/E4-GRBD-02-INT_cam04-01.jpg" />                    
+                </div>
                 {/* khối 1 */}
                 <div style={{
                     display: 'flex',
@@ -48,7 +50,7 @@ function HomePage() {
                             fontSize: '30px',
                             textAlign: 'left',
                             color: '#4B3049',
-                            
+
                         }}>
                             <h1>Gối chất lượng tốt nhất</h1>
 
@@ -58,7 +60,7 @@ function HomePage() {
                             marginLeft: '110px',
                             textAlign: 'left',
                             color: '#795376',
-                            width:'80%'
+                            width: '80%'
 
                         }}>
                             Nơi bạn có thể khám phá và mua sắm những sản phẩm gối chất lượng, tạo sự thoải mái tối đa cho giấc ngủ của bạn
@@ -79,7 +81,7 @@ function HomePage() {
                         </Link>
 
                     </div>
-                    <div style={{width:'50%'}}>
+                    <div style={{ width: '50%' }}>
                         <img
                             src='https://preview.colorlib.com/theme/pillowmart/img/banner.png.webp'
                             style={{
@@ -98,14 +100,14 @@ function HomePage() {
                     marginTop: '200px',
                     marginBottom: '120px',
                     marginLeft: '15px',
-                    width:'100%'
+                    width: '100%'
                 }}>
                     <div style={{
                         display: 'flex',
                         justifyContent: 'space-around',
                         marginLeft: '-100px',
                         marginLeft: '93px',
-                        width:'50%'
+                        width: '50%'
 
                     }} >
                         <img style={{
@@ -127,7 +129,7 @@ function HomePage() {
                         margin: '70px 80px 10px 46px',
                         //border:'1px solid red',
                         textAlign: 'left',
-                        width:'50%'
+                        width: '50%'
 
                     }}>
                         <div style={{
@@ -144,7 +146,7 @@ function HomePage() {
                             //border: '1px solid red',
                             textAlign: 'left',
                             color: '#4B3049',
-                            width:'85%'
+                            width: '85%'
 
                         }}>
                             <h2>Vỏ gối với họa tiết hiện đại và thiết kế ngắn gọn</h2>

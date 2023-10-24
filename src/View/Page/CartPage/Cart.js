@@ -3,7 +3,6 @@ import { CloseSquareOutlined } from '@ant-design/icons';
 import Header from '../../../components/header/Header';
 import Footer from '../../../components/footer/Footer';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import '../CartPage/Cart.css'
 
 function Cart() {
@@ -26,7 +25,7 @@ function Cart() {
             } catch (error) {
             }
         };
-    
+
         const fetchDataByTT = async () => {
             try {
                 const response = await axios.get(`${URL}/getlisttocartbytt/${userId}`);
@@ -34,17 +33,14 @@ function Cart() {
             } catch (error) {
             }
         };
-    
+
         Promise.all([fetchData(), fetchDataByTT()])
             .then(() => {
                 // window.location.reload()
             })
             .catch((error) => {
-                // Handle any errors that occur while fetching the data.
                 console.error("Error in Promise.all:", error);
             });
-    
-        // Make sure to include all dependencies in the dependency array.
     }, []);
 
 
@@ -98,7 +94,12 @@ function Cart() {
         await axios.delete(`${URL}/deletecart/${id}`)
         // handleOnchangeCheckox()
         setInitialValues(newValues);
-
+    }
+    const handleDeleteProductPay = async (id) => {
+        const newValues = initialValuebytts.filter((item) => item._id !== id);
+        await axios.delete(`${URL}/deletecart/${id}`)
+        setInitialValuebytt(newValues);
+        alert("Huỷ mặt hàng thành công");
     }
     const handlePay = async () => {
         // window.location.href = '/Pay';
@@ -201,7 +202,7 @@ function Cart() {
                     marginTop: '10px',
                     alignItems: 'center',
                 }} >
-
+                    {/* giỏ hàng */}
                     <div >
                         {initialValues?.map(initialValue => (
                             <div style={{
@@ -306,7 +307,7 @@ function Cart() {
                     marginTop: '50px',
                     textAlign: 'center'
                 }}>
-                    Sản phẩm đã thanh toán
+                    Sản phẩm đã đã đặt
                 </div>
                 <div style={{
                     display: 'flex',
@@ -324,21 +325,27 @@ function Cart() {
 
                     }}>
                         <h4 style={{
-                            marginLeft: '-280px',
+                            marginLeft: '-385px',
                         }} >
                             Giá
                         </h4>
                         <h4 style={{
                             position: 'relative',
-                            left: '100px',
+                            left: '70px',
                         }}>
                             Số Lượng
                         </h4>
                         <h4 style={{
                             position: 'relative',
-                            left: '170px',
+                            left: '110px',
                         }} >
                             Tổng Tiền
+                        </h4>
+                        <h4 style={{
+                            position: 'relative',
+                            left: '230px',
+                        }} >
+                            Trạng Thái
                         </h4>
 
                     </div>
@@ -350,7 +357,7 @@ function Cart() {
                     marginTop: '10px',
                     alignItems: 'center',
                 }} >
-
+                    {/* đã mua */}
                     <div >
                         {initialValuebytts?.map(initialValue => (
                             <div style={{
@@ -405,7 +412,10 @@ function Cart() {
                                         {initialValue.quantity * initialValue.price}đ
                                     </div>
                                 </div>
-
+                                <button onClick={async () => await handleDeleteProductPay(initialValue._id)} style={{
+                                    position: 'relative',
+                                    left: '-120px'
+                                }}>Huỷ</button>
                             </div>
                         ))}
 

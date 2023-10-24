@@ -178,7 +178,7 @@ function Header() {
                     width: '15%',
                     position: 'relative',
                     top: '-4px',
-                    left: '-55px',
+                    left: '-40px',
                 }} />
                 <div >
 
