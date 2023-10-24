@@ -94,6 +94,7 @@ function Cart() {
         await axios.delete(`${URL}/deletecart/${id}`)
         // handleOnchangeCheckox()
         setInitialValues(newValues);
+        window.location.reload();
     }
     const handleDeleteProductPay = async (id) => {
         const newValues = initialValuebytts.filter((item) => item._id !== id);
