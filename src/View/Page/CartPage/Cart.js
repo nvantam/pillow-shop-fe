@@ -99,12 +99,12 @@ function Cart() {
         const newValues = initialValuebytts.filter((item) => item._id !== id);
         await axios.delete(`${URL}/deletecart/${id}`)
         setInitialValuebytt(newValues);
-        alert("Huỷ mặt hàng thành công");
+        alert("Huỷ mặt hàng thành công, bạn sẽ được hoàn lại tiền!!");
     }
     const handlePay = async () => {
         // window.location.href = '/Pay';
         if (selectedProducts.length == 0) {
-            alert("Vui lòng chọn sản phẩm")
+            alert("Vui lòng chọn sản phẩm!")
             return;
         }
         setIsLoad(true);
@@ -307,7 +307,7 @@ function Cart() {
                     marginTop: '50px',
                     textAlign: 'center'
                 }}>
-                    Sản phẩm đã đã đặt
+                    Sản phẩm đã đặt
                 </div>
                 <div style={{
                     display: 'flex',

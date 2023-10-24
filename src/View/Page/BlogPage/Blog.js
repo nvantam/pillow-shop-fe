@@ -94,7 +94,10 @@ function Blog() {
                 Trong phần giỏ hàng, bạn có thể xem tóm tắt của tất cả sản phẩm bạn đã chọn.<br /> <br />
                 Tiến Hành Đặt Hàng:
                 Sau khi kiểm tra giỏ hàng, bạn sẽ có một tùy chọn "Thanh toán"
-                Nhấp vào nút này để bắt đầu quá trình thanh toán.
+                Nhấp vào nút này để bắt đầu quá trình thanh toán.<br/><br/>
+                Huỷ mặt hàng đã đặt:
+                Khi bạn muốn huỷ click vào nút huỷ mặt hàng, nếu tiền đã được thanh toán shop sẽ
+                 hoàn trả tiền vào tài khoản đã thanh toán
               </div>
 
               <h4 style={{ color: 'rgb(75, 48, 73)' }}>
