@@ -1,13 +1,63 @@
-.footer-link{
+.menu_footer {
+    height: 170px;
+    width: 100%;
+    margin-left: 5px;
+    margin-top: 150px;
+}
+
+.menu_container {
+    height: 200px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+
+}
+
+.item_logo1 {
+    margin-top: 15px;
+}
+
+.item_text {
+    margin-top: 20px;
+}
+
+.item_container1 {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+
+}
+
+.item_pay {
+    width: 20px;
+    position: relative;
+    top: 3px;
+}
+hr{
+   width: 86%; 
+}
+
+.footer-link {
     text-decoration: none;
     color: black;
-   
+
 }
-.footer-list{
+
+.footer-list {
     list-style: none;
     align-items: start;
 }
+
 .footer-list.li {
     margin-left: -30px;
     padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .menu_footer{
+        display: block;
+        /* background-color: #333; */
+        text-align: center;
+        padding: 10px;
+    }
 }

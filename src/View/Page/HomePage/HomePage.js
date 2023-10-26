@@ -4,12 +4,14 @@ import Footer from '../../../components/footer/Footer'
 import './HomePage.css'
 import { Link } from 'react-router-dom'
 import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
+
 
 function HomePage() {
 
     const [apis, setApis] = useState([])
     const URL = process.env.REACT_APP_URL;
-    const [isload, setIsload]= useState(true)
+    const [isload, setIsload] = useState(true)
 
     useEffect(() => {
         fetch(`${URL}/getproducts`)
@@ -19,49 +21,52 @@ function HomePage() {
             .then(
                 data => {
                     setApis(data.slice(0, 6))
-                        setIsload(false)
-
+                    setIsload(false)
                 }
             )
     }, []);
+
+    const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+
     return (
         <div>
-            <Header/>
-            {isload && 
-            <div style={{
-               width: '100%',
-               height : '100vh',
-               backgroundColor: 'rgba(0, 0, 0, 0.3)',
-               position: 'fixed',
-               top: 0, /* Thay đổi giá trị này thành 0 để đưa nó lên giữa */
-               left: 0, /* Đảm bảo nó nằm ở giữa theo chiều ngang */
-               right: 0, /* Đảm bảo nó nằm ở giữa theo chiều ngang */
-               bottom: 0, /* Đảm bảo nó nằm ở giữa theo chiều dọc */
-               zIndex: 100,
-               display: 'flex', /* Sử dụng display: flex để căn giữa nội dung bên trong */
-               justifyContent: 'center', /* Căn giữa theo chiều ngang */
-               alignItems: 'center', /* Căn giữa theo chiều dọc */
-            }}>
-                <div>
-                <Spin  style={{
-                    color: 'white'
-                }} />
+            <Header />
+            {isload &&
+                <div style={{
+                    width: '100%',
+                    height: '100vh',
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    position: 'fixed',
+                    top: 0, /* Thay đổi giá trị này thành 0 để đưa nó lên giữa */
+                    left: 0, /* Đảm bảo nó nằm ở giữa theo chiều ngang */
+                    right: 0, /* Đảm bảo nó nằm ở giữa theo chiều ngang */
+                    bottom: 0, /* Đảm bảo nó nằm ở giữa theo chiều dọc */
+                    zIndex: 100,
+                    display: 'flex', /* Sử dụng display: flex để căn giữa nội dung bên trong */
+                    justifyContent: 'center', /* Căn giữa theo chiều ngang */
+                    alignItems: 'center', /* Căn giữa theo chiều dọc */
+                }}>
+                    <div>
+                        <Spin style={{
+                            color: 'white',
+                        }}
+                        />
+                    </div>
                 </div>
-            </div>
             }
             <div style={{
-                width:'100%'
+                width: '100%'
 
             }}>
                 <div style={{
-                    width:'100%',
+                    width: '100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}>
                     <img style={{
-                    width: '99%', height:'500px'
-                }}  src="https://www.rendersmasarq.com.ar/wp-content/uploads/2020/11/E4-GRBD-02-INT_cam04-01.jpg" />                    
+                        width: '99%', height: '500px'
+                    }} src="https://www.rendersmasarq.com.ar/wp-content/uploads/2020/11/E4-GRBD-02-INT_cam04-01.jpg" />
                 </div>
                 {/* khối 1 */}
                 <div style={{

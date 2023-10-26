@@ -90,14 +90,15 @@ function Signup() {
                 </div>
                 <div style={{ backgroundColor: '#fff', }}>
                     <div style={{ marginLeft: '30px' }}>
-                        <div style={{ color: 'red', fontSize: '32px' }}>Đăng Kí</div>
+                        <span style={{ color: 'red', fontSize: '32px' }}>Đăng Kí</span>
                         <Link className='x' to="/HomePage">
-                            <div style={{
+                            <span style={{
                                 position: 'relative',
-                                left: '420px',
+                                right: '-320px',
+                                top:'-10px',
                                 marginTop: '-40px',
                                 fontSize: '20px'
-                            }}><CloseOutlined /></div>
+                            }}><CloseOutlined /></span>
                         </Link> <br />
                         <div style={{ color: 'gray' }}>Welcome! Login to get amazing discounts and offers only for you</div><br />
                         <div style={{ color: 'gray', fontSize: '16px', marginTop: '-10px' }}>Gmail:</div>

@@ -6,45 +6,31 @@ function Footer() {
 
     return (
 
-        <div style={{
-            height: '170px',
-            width: '100%',
-            marginLeft: '5px',
-            marginTop: '150px'
-            // backgroundColor: 'white',
-        }}>
-            <hr style={{
-                width: '86%',
-                // marginLeft: '150px'
-            }} />
-
-            <div style={{
-                height: '200px',
-                display: 'flex',
-                marginTop: '20px',
-                justifyContent: 'space-around',
-                // alignItems: 'center',
-                // paddingTop: '15px',
-            }}> <div >
-                    <Link className='menu_header' to="/" >
-                        <img style={{
-                            marginTop: '15px'
-                        }} src='https://preview.colorlib.com/theme/pillowmart/img/logo.png.webp' />
-                    </Link>
-                    <div style={{ marginTop: '20px' }}>
-                        Website cung ứng sản phẩm <br /> gối chất lượng cao
-                    </div>
-                    <div style={{ marginTop: '20px' }}>
-                        Mặt hàng gối đa dạng <br /> dễ dàng mua bán
-                    </div>
+        <div className='menu_footer' >
+            <hr />
+            <span className='logo' style={{
+                    position: 'relative',
+                    left: '210px',
+                    fontSize: '25px',
+                    fontFamily:'Brush Script MT',
+                    fontWeight: '550',
+                    color:'rgb(164, 113, 173)',
+                    top: '45px',
+                }}>Gối Gia Đình</span>
+            <div className='menu_container'> <div >
+                <Link to="/" >
+                    <img className='item_logo1' src='https://preview.colorlib.com/theme/pillowmart/img/logo.png.webp' />
+                </Link>
+                <div className='item_text'>
+                    Website cung ứng sản phẩm <br /> gối chất lượng cao
                 </div>
+                <div className='item_text'>
+                    Mặt hàng gối đa dạng <br /> dễ dàng mua bán
+                </div>
+            </div>
                 <div>
-                    <h4 style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        marginLeft: '0px',
-                    }}>
-                        Thương Mại Điện Tử - Cửa Hàng TTL
+                    <h4 className='item_container1' >
+                        Gối Gia Đình - PillowMart
                     </h4>
 
                     <div className="footer-links">
@@ -73,11 +59,10 @@ function Footer() {
                     </div>
                     <h4>
                         Thanh Toán <span>
-                            <img style={{ width: '20px', position: 'relative', top: '3px' }} src='https://cdn.airpay.vn/images_v1/c134/icon_c13401_v001.png' />
+                            <img className='item_pay' src='https://cdn.airpay.vn/images_v1/c134/icon_c13401_v001.png' />
                         </span>
                     </h4>
                     <div>
-
                     </div>
                 </div>
             </div>

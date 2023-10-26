@@ -39,13 +39,13 @@ function ProductDetails() {
                 price: apis.price,
                 status: false
             })
-            .then(() => {
-            })
-            .catch(error => {
-                console.error("Lỗi khi thêm vào giỏ hàng:", error);
-              });
-              alert("Thêm vào giỏ hàng thành công!!")
-              window.location.href = '/cart/' + id;
+                .then(() => {
+                })
+                .catch(error => {
+                    console.error("Lỗi khi thêm vào giỏ hàng:", error);
+                });
+            alert("Thêm vào giỏ hàng thành công!!")
+            window.location.href = '/cart/' + id;
         }
     }
     return (
@@ -53,39 +53,21 @@ function ProductDetails() {
         <div>
 
             <Header />
-            <div style={{
-                marginTop: '70px',
-
-            }}>
-                <div style={{
-                    backgroundColor: '#B08EAD',
-                    fontSize: '40px',
-                    height: '350px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    objectfit: 'cover'
-                }}>
+            <div className='producdetail_container'>
+                <div className='item_producdetail'>
                     <h3>Chi Tiết Sản Phẩm</h3>
                 </div>
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                }} >
+                <div className='item_listproduct'>
 
                     <div >
-                        <img style={{
-                            height: '400px',
-                            width: '100%',
-                        }} src={apis.img} />
+                        <img className='item_img' src={apis.img} />
 
                     </div>
 
                     <div>
                         <div>
                             <div >
-                                <h3 style={{ marginTop: '80px' }}>
+                                <h3 className='item_name'>
                                     {apis.name}
                                 </h3>
                             </div  >
@@ -95,13 +77,7 @@ function ProductDetails() {
                         </div>
 
                         <div className='descrip'> {apis.description}</div>
-                        <button onClick={() => clickAddToCart(apis)} className='explore_now' style={{
-                            marginTop: '30px',
-                            height: '40px',
-                            width: '170px',
-                            fontSize: '14px',
-                            textAlign: 'center',
-                            padding: '12px 14px 20px 10px',
+                        <button onClick={() => clickAddToCart(apis)} className='explore_now item_button' style={{
                         }}>
                             Thêm Vào Giỏ Hàng
                         </button>

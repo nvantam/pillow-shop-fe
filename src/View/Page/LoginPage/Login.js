@@ -45,10 +45,13 @@ function Login() {
 
     console.log(password)
     return (
-        <div>
-
+        <div style={{
+            margin:'0',
+            padding:'0',
+            boxSizing:'border-box'
+        }}>
             <div style={{
-                width: '100%',
+                width: '100vw',
                 height: '100vh',
                 alignItems: 'center',
                 display: 'flex',
@@ -71,19 +74,19 @@ function Login() {
                     }}>
                         <h1>Welcome to Pillow-Mart</h1>
                         <br />
-                        <a></a>
                     </div>
                     <div style={{ backgroundColor: '#fff', }}>
                         <div style={{ marginLeft: '30px' }}>
                             <a style={{ color: 'red', fontSize: '32px' }}>Đăng Nhập</a>
                             <Link to="/HomePage">
-                                <div className='x' style={{
+                                <span className='x' style={{
                                     position: 'relative',
-                                    left: '405px',
-                                    marginTop: '-40px',
+                                    top:'-10px',
+                                    right: '-235px',
+                                    // marginTop: '-40px',
                                     fontSize: '20px',
-                                }}><CloseOutlined /></div>
-                            </Link><br />
+                                }}><CloseOutlined /></span>
+                            </Link>
                             <div style={{ color: 'gray' }}>Welcome! Login to get amazing discounts and offers only for you</div><br />
                             <div style={{ color: 'gray', fontSize: '16px', marginTop: '20px' }}>Gmail:</div>
                             <input onChange={e => { setUsername(e.target.value) }} style={{ border: '1px solid gray', borderRadius: '10px', height: '30px', width: '300px' }} />
@@ -107,9 +110,6 @@ function Login() {
                                 <a>Bạn chưa có tài khoản?</a>
                                 <Link className='log' to="/Signup">Đăng Kí</Link>
                             </div>
-                            {/* <div>                                
-                                <Link className='log' to="/Forgetpass">Quên mật khẩu?</Link>
-                            </div> */}
                         </div>
                     </div>
                 </div>

@@ -1,83 +1,199 @@
+.menu {
+    position: fixed;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: space-around;
+    height: 40px;
+    background-color: white;
+    top: 0;
+    z-index: 1;
+}
+
+.item_logo {
+    position: relative;
+    top:-25px;
+    /* margin-left: 15px; */
+
+}
+
+.item_search {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    font-size: 19px;
+    margin-top: 5px;
+}
+
+.item_input {
+    width: 200px;
+    margin-right: -100px;
+
+}
+
+.item_container {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 180px;
+    margin-top: 10px;
+}
+
+.item_cart {
+    width: 15%;
+    position: relative;
+    top: -4px;
+    left: -40px;
+}
+
+.item_login {
+    width: 100%;
+    font-size: 20px;
+    margin-top: -8px;
+    position: relative;
+    left: -30px;
+}
+
+.item_username {
+    position: relative;
+    right: -15px;
+    font-size: 18px;
+    margin-top: -6px;
+    width: 140px;
+
+}
+
 .menu_header:hover .product {
     display: block;
-    
+
 }
-.menu_header:hover .product{
-    
+
+.menu_header:hover .product {
+
     background-color: #B08EAD;
     /* background: red; */
 }
-.menu_header:hover{
-     color: #B08EAD;
-      
+
+.menu_header:hover {
+    color: #B08EAD;
+
 }
+
 .menu_header {
     cursor: pointer;
     text-decoration: none;
     color: black;
 }
 
+.item_dropdown {
+    margin-top: 22px;
+    width: 90px;
+    position: absolute;
+    left: 65px;
+    top: 18px;
+}
 
+.itemlist {
+    background-color: #B08EAD;
+    color: black;
+    margin-left: -170px;
+
+}
 
 .product {
     display: none;
     position: absolute;
     text-decoration: none;
     list-style: none;
-    font-size: 15px; 
+    font-size: 15px;
     margin: 20px;
+}
+
+.item_1 {
+    display: flex;
+    padding: 20px;
+
+}
+
+.item_2 {
+    width: 50px;
+    height: 50px;
+}
+
+.item_3 {
+    margin-left: 20px;
+    color: white;
+
 }
 
 .product::before {
     content: "";
-    position:absolute ;
+    position: absolute;
     width: 100%;
-    height: 20px; 
+    height: 20px;
     top: -20px;
     left: 0;
 }
+
 .explore_now {
     cursor: pointer;
 }
+
 .logout {
     margin-left: -40px;
     display: flex;
-    justify-content: flex-start;   
+    justify-content: flex-start;
     width: 100%;
     /* line-height: 1px; */
     margin-top: 30px;
-    color: red; 
+    color: red;
     font-weight: 550;
     display: none;
     z-index: 999;
 }
 
-.user:hover .logout{
+.user:hover .logout {
     display: block;
 }
-.logout:hover{
+
+.logout:hover {
     cursor: pointer;
 }
-.logout::before{
+
+.logout::before {
     content: "";
     background-color: #fff;
-    position:absolute ;
+    position: absolute;
     width: 100%;
-    height: 40px; 
+    height: 40px;
     top: 20px;
-    left: 0; 
+    left: 0;
     text-align: right;
     opacity: 0.02;
 }
- .user:hover{
+
+.user:hover {
     cursor: pointer;
- }
- .user:hover{
+}
+
+.user:hover {
     color: #B08EAD;
 
- }
- .selectedmenu {
-    color: #ff0000; /* Đổi màu thành đỏ khi được chọn */
-    /* font-weight: bold; Chữ in đậm khi được chọn */
-  }
+}
 
+.selectedmenu {
+    color: #ff0000;
+    /* Đổi màu thành đỏ khi được chọn */
+    /* font-weight: bold; Chữ in đậm khi được chọn */
+}
+
+
+@media only screen and (max-width: 600px) {
+    .menu{
+        display: block;
+        background-color: #333;
+        text-align: center;
+        padding: 10px;
+    }
+}
