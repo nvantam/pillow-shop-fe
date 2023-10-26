@@ -3,10 +3,13 @@ import Header from '../../../components/header/Header'
 import Footer from '../../../components/footer/Footer'
 import './HomePage.css'
 import { Link } from 'react-router-dom'
+import { Spin } from 'antd';
+
 function HomePage() {
 
     const [apis, setApis] = useState([])
     const URL = process.env.REACT_APP_URL;
+    const [isload, setIsload]= useState(true)
 
     useEffect(() => {
         fetch(`${URL}/getproducts`)
@@ -14,14 +17,40 @@ function HomePage() {
                 return data.json()
             })
             .then(
-                data => setApis(data.slice(0, 6))
+                data => {
+                    setApis(data.slice(0, 6))
+                        setIsload(false)
+
+                }
             )
     }, []);
     return (
         <div>
             <Header/>
+            {isload && 
             <div style={{
-                
+               width: '100%',
+               height : '100vh',
+               backgroundColor: 'rgba(0, 0, 0, 0.3)',
+               position: 'fixed',
+               top: 0, /* Thay đổi giá trị này thành 0 để đưa nó lên giữa */
+               left: 0, /* Đảm bảo nó nằm ở giữa theo chiều ngang */
+               right: 0, /* Đảm bảo nó nằm ở giữa theo chiều ngang */
+               bottom: 0, /* Đảm bảo nó nằm ở giữa theo chiều dọc */
+               zIndex: 100,
+               display: 'flex', /* Sử dụng display: flex để căn giữa nội dung bên trong */
+               justifyContent: 'center', /* Căn giữa theo chiều ngang */
+               alignItems: 'center', /* Căn giữa theo chiều dọc */
+            }}>
+                <div>
+                <Spin  style={{
+                    color: 'white'
+                }} />
+                </div>
+            </div>
+            }
+            <div style={{
+                width:'100%'
 
             }}>
                 <div style={{

@@ -72,6 +72,7 @@ function Header() {
             padding: '20px',
             display: 'flex',
             width: '100%',
+            margin:'0',
             justifyContent: 'space-around',
             height: '40px',
             backgroundColor: 'white',
@@ -177,8 +178,8 @@ function Header() {
 
                                 fontSize: '20px',
                                 marginTop: '-8px',
-                                paddingLeft: '10px',
-                                paddingRight: '10px',
+                                // paddingLeft: '10px',
+                                // paddingRight: '10px',
                                 position: 'relative',
                                 left: '-30px'
                             }}>
