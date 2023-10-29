@@ -71,7 +71,7 @@ function Header() {
             <Link className='menu_header' to="/HomePage">
                 <span className='logo' style={{
                     position: 'relative',
-                    left: '60px',
+                    left: '35px',
                     fontSize: '35px',
                     fontFamily:'Brush Script MT',
                     fontWeight: '550',

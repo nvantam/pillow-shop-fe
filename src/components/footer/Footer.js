@@ -10,7 +10,7 @@ function Footer() {
             <hr />
             <span className='logo' style={{
                     position: 'relative',
-                    left: '210px',
+                    left: '180px',
                     fontSize: '35px',
                     fontFamily:'Brush Script MT',
                     fontWeight: '550',
