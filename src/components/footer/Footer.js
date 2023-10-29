@@ -11,7 +11,7 @@ function Footer() {
             <span className='logo' style={{
                     position: 'relative',
                     left: '210px',
-                    fontSize: '25px',
+                    fontSize: '35px',
                     fontFamily:'Brush Script MT',
                     fontWeight: '550',
                     color:'rgb(164, 113, 173)',

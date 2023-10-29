@@ -9,11 +9,13 @@
     background-color: white;
     top: 0;
     z-index: 1;
+    
 }
 
 .item_logo {
     position: relative;
     top:-25px;
+    /* width: 50px; */
     /* margin-left: 15px; */
 
 }
@@ -43,7 +45,7 @@
 .item_cart {
     width: 15%;
     position: relative;
-    top: -4px;
+    top: -6px;
     left: -40px;
 }
 

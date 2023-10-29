@@ -72,16 +72,17 @@ function Header() {
                 <span className='logo' style={{
                     position: 'relative',
                     left: '60px',
-                    fontSize: '25px',
+                    fontSize: '35px',
                     fontFamily:'Brush Script MT',
                     fontWeight: '550',
                     color:'rgb(164, 113, 173)',
                     top: '-18px',
+                    
                 }}>Gối Gia Đình</span>
                 <div className='menu_header item_logo' style={{
                 }}>
 
-                    <img src='https://preview.colorlib.com/theme/pillowmart/img/logo.png.webp' />
+                    <img style={{width:'140px'}} src='https://preview.colorlib.com/theme/pillowmart/img/logo.png.webp' />
                 </div>
             </Link>
             <div className='item_search'>
